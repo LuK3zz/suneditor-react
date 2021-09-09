@@ -8,9 +8,9 @@
   },
   "main": "dist/index.js",
   "scripts": {
-    "build": "rm -rf ./dist && tsc",
+    "build": "rmdir /S dist && tsc",
     "prepare": "npm run build",
-    "copy": "rm -rf ./build && tsc --outDir build && rm -rf ../suneditor-react-dom/src/build &&  cp -r build ../suneditor-react-dom/src && rm -rf ../suneditor-react-next/build &&  cp -r build ../suneditor-react-next"
+    "copy": "rmdir /S ./build && tsc --outDir build && rmdir /S  ../suneditor-react-dom/src/build &&  cp -r build ../suneditor-react-dom/src && rmdir /S ../suneditor-react-next/build &&  cp -r build ../suneditor-react-next"
   },
   "keywords": [
     "editor",

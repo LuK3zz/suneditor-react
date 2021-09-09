@@ -21,11 +21,11 @@ var plugins_1 = __importDefault(require("suneditor/src/plugins"));
 var suneditor_1 = __importDefault(require("suneditor"));
 var SunEditor = function (props) {
     var name = props.name, lang = props.lang, _a = props.setOptions, setOptions = _a === void 0 ? {} : _a, placeholder = props.placeholder, _b = props.width, width = _b === void 0 ? "100%" : _b, height = props.height, defaultValue = props.defaultValue, setContents = props.setContents, setDefaultStyle = props.setDefaultStyle, onResizeEditor = props.onResizeEditor, getSunEditorInstance = props.getSunEditorInstance, appendContents = props.appendContents, _c = props.setAllPlugins, setAllPlugins = _c === void 0 ? true : _c, _d = props.disable, disable = _d === void 0 ? false : _d, _e = props.readOnly, readOnly = _e === void 0 ? false : _e, _f = props.hide, hide = _f === void 0 ? false : _f, _g = props.hideToolbar, hideToolbar = _g === void 0 ? false : _g, _h = props.disableToolbar, disableToolbar = _h === void 0 ? false : _h, onChange = props.onChange, autoFocus = props.autoFocus, onBlur = props.onBlur, onLoad = props.onLoad, toggleCodeView = props.toggleCodeView, toggleFullScreen = props.toggleFullScreen, showInline = props.showInline, showController = props.showController, imageUploadHandler = props.imageUploadHandler;
-    var txtArea = react_1.useRef(null);
-    var editor = react_1.useRef();
-    var initialEffect = react_1.useRef(true);
-    react_1.useEffect(function () {
-        setOptions.lang = setOptions.lang || getLanguage_1.default(lang);
+    var txtArea = (0, react_1.useRef)(null);
+    var editor = (0, react_1.useRef)();
+    var initialEffect = (0, react_1.useRef)(true);
+    (0, react_1.useEffect)(function () {
+        setOptions.lang = setOptions.lang || (0, getLanguage_1.default)(lang);
         setOptions.width = setOptions.width || width;
         if (!setOptions.plugins && setAllPlugins)
             setOptions.plugins = plugins_1.default;
@@ -168,23 +168,23 @@ var SunEditor = function (props) {
                 editor.current.destroy();
         };
     }, []);
-    react_1.useEffect(function () {
+    (0, react_1.useEffect)(function () {
         var _a;
         if (!initialEffect.current) {
             (_a = editor.current) === null || _a === void 0 ? void 0 : _a.setOptions({
-                lang: getLanguage_1.default(lang),
+                lang: (0, getLanguage_1.default)(lang),
                 placeholder: placeholder,
                 height: height,
                 width: width,
             });
         }
     }, [lang, placeholder, height, width]);
-    react_1.useEffect(function () {
+    (0, react_1.useEffect)(function () {
         var _a;
         if (setDefaultStyle && !initialEffect.current)
             (_a = editor.current) === null || _a === void 0 ? void 0 : _a.setDefaultStyle(setDefaultStyle);
     }, [setDefaultStyle]);
-    react_1.useEffect(function () {
+    (0, react_1.useEffect)(function () {
         var _a, _b;
         if (!initialEffect.current) {
             if (setContents !== undefined)
@@ -192,7 +192,7 @@ var SunEditor = function (props) {
                     ((_b = editor.current) === null || _b === void 0 ? void 0 : _b.setContents(setContents));
         }
     }, [setContents]);
-    react_1.useEffect(function () {
+    (0, react_1.useEffect)(function () {
         var _a, _b;
         if (!initialEffect.current) {
             if (appendContents !== undefined)
@@ -200,7 +200,7 @@ var SunEditor = function (props) {
             (_b = editor.current) === null || _b === void 0 ? void 0 : _b.core.focusEdge(null);
         }
     }, [appendContents]);
-    react_1.useEffect(function () {
+    (0, react_1.useEffect)(function () {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         if (!initialEffect.current) {
             if (hideToolbar === true)
@@ -225,9 +225,9 @@ var SunEditor = function (props) {
                 (_k = editor.current) === null || _k === void 0 ? void 0 : _k.show();
         }
     }, [disable, hideToolbar, disableToolbar, hide]);
-    react_1.useEffect(function () {
+    (0, react_1.useEffect)(function () {
         initialEffect.current = false;
     }, []);
-    return (jsx_runtime_1.jsx("textarea", __assign({ style: { visibility: "hidden" }, ref: txtArea }, { name: name }), void 0));
+    return ((0, jsx_runtime_1.jsx)("textarea", __assign({ style: { visibility: "hidden" }, ref: txtArea }, { name: name }), void 0));
 };
 exports.default = SunEditor;

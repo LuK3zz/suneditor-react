@@ -2,6 +2,7 @@ import { Lang } from "suneditor/src/lang/Lang";
 
 type lang =
   | "en"
+  | "cs"
   | "da"
   | "de"
   | "es"
